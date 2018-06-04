@@ -41,7 +41,7 @@ As a blank, I want to be able to blank, so that blank.
 
 **Post**
 	title:string
-	content:string
+	content:text
 
 **Credits**
 	title:string
