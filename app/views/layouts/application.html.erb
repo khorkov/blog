@@ -1,14 +1,78 @@
 <!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
-    <title>Blog</title>
+    <meta charset="utf-8">
+    <title>Tales - Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+    <!-- Google Webfonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CPT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+        <script src="modules/respond/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/jquery/js/jquery.min.js"><\/script>')</script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--Font for the overlay screens-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body>
+
+    <header>
+      <div class="widewrapper masthead">
+        <div class="container">
+          <a href="index.html" id="logo">
+            Playrix
+            <!--Use the following line instead if you want to use an image logo-->
+            <!--<img src="img/tales-logo.png" alt="Tales Blog">-->
+          </a>
+
+          <div id="mobile-nav-toggle" class="pull-right">
+            <a href="index.html#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+           <%= render 'layouts/menu'%>
+        </div>
+      </div>
+
+      <div class="widewrapper subheader">
+        <div class="container">
+          <div class="tales-breadcrumb">
+            <a href="index.html#">Blog</a>
+          </div>
+          <%= render 'layouts/search'%>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <%= render 'layouts/footer'%>
+
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/modernizr/js/modernizr-custom.js"></script>
   </body>
 </html>
