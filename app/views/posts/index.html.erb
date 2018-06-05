@@ -1,1 +1,7 @@
-<h1>Hello world!</h1>
+<div class="col-md-8 blog-main">
+  <div class="row">
+    <%= render @posts %>
+  </div>
+  <%= render 'common/paging' %>
+</div>
+<%= render 'common/aside-widget' %>

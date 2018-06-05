@@ -1,0 +1,16 @@
+<div class="col-md-6 col-sm-6">
+  <article class=" blog-teaser">
+    <header>
+      <%= image_tag("cat.png") %>
+      <h3><a href="#"><%= link_to post.title, post_path(post) %></a></h3>
+      <span class="meta"><%= post.created_at.to_date.strftime("%d %B %Y") %>, Alexander Rechsteiner</span>
+      <hr>
+    </header>
+    <div class="body">
+      <%=h truncate(post.content, :length => 250) %>
+    </div>
+    <div class="clearfix">
+      <%= link_to "Read more", post_path(post), class: "btn btn-tales-one" %>
+    </div>
+  </article>
+</div>

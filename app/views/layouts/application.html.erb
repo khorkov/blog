@@ -7,7 +7,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tales - Blog</title>
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -38,21 +38,16 @@
 
   </head>
 
-  <body>
+  <body class="<%= controller.controller_name %>">
 
     <header>
       <div class="widewrapper masthead">
         <div class="container">
-          <a href="index.html" id="logo">
-            Playrix
-            <!--Use the following line instead if you want to use an image logo-->
-            <!--<img src="img/tales-logo.png" alt="Tales Blog">-->
-          </a>
-
+          <%= link_to "Playrix", root_path, id: "logo" %>
           <div id="mobile-nav-toggle" class="pull-right">
-            <a href="index.html#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </a>
+            <%= link_to root_path, data: { toggle: "collapse", target: ".tales-nav .navbar-collapse" } do %>
+                <i class="fa fa-bars"></i>
+              <% end %>
           </div>
            <%= render 'layouts/menu'%>
         </div>
@@ -60,15 +55,19 @@
 
       <div class="widewrapper subheader">
         <div class="container">
-          <div class="tales-breadcrumb">
-            <a href="index.html#">Blog</a>
-          </div>
+          <%= render 'layouts/breadcrumbs'%>
           <%= render 'layouts/search'%>
         </div>
       </div>
     </header>
 
-    <%= yield %>
+    <div class="widewrapper main">
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 
     <%= render 'layouts/footer'%>
 
