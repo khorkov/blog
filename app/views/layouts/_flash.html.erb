@@ -1,0 +1,12 @@
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 25px;">
+      <% flash.each do |name, message| %>
+        <div class="alert <%= bootstrap_class_for(name) %>">
+          <button class="close" data-dismiss="alert">&times;</button>
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

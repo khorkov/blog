@@ -40,6 +40,8 @@
 
   <body class="<%= controller.controller_name %>">
 
+    <%= render 'layouts/flash'%>
+
     <header>
       <div class="widewrapper masthead">
         <div class="container">
@@ -49,7 +51,6 @@
                 <i class="fa fa-bars"></i>
               <% end %>
           </div>
-           <%= render 'layouts/menu'%>
         </div>
       </div>
 
