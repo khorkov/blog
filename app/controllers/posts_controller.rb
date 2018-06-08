@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :select_post, only: [:new, :show]
 
   def index
     @posts = Post.all.limit(4).order("created_at desc").paginate(page: params[:page], per_page: 4)
@@ -22,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.all.limit(4).order("created_at desc")
   end
 
   def edit
@@ -48,10 +48,6 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.friendly.find(params[:id])
-  end
-
-  def select_post
-    @posts = Post.all.limit(4).order("created_at desc")
   end
 
 end
