@@ -3,9 +3,11 @@
     <header>
       <h1><%= @post.title %></h1>
 
-      <%= link_to "Edit", edit_post_path(@post) %>
-      |
-      <%= link_to "Delete ", post_path(@post), method: :delete, data: { confirm: "Are you sure?"  } %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_post_path(@post) %>
+        |
+        <%= link_to "Delete ", post_path(@post), method: :delete, data: { confirm: "Are you sure?"  } %>
+      <% end %>
 
       <div class="lead-image">
         <%= image_tag("hands-big.png", class: "img-responsive") %>
@@ -28,6 +30,7 @@
     <div class="body">
       <%= markdown @post.content %>
     </div>
+
   </article>
   <aside class="social-icons clearfix">
     <a href="#" class="social-icon color-one">
