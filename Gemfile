@@ -20,6 +20,7 @@ gem 'redcarpet', '~> 3.4'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'mail_form', '~> 1.7', '>= 1.7.1'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

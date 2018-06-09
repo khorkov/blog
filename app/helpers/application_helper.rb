@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def full_title(page_title = '')
-    base_title = "Coding Horror"
+    base_title = "CodinGame Blog"
     if page_title.empty?
       base_title
     else
