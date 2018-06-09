@@ -10,7 +10,7 @@
       <% end %>
 
       <div class="lead-image">
-        <%= image_tag("hands-big.png", class: "img-responsive") %>
+        <%= image_tag @post.image.url(:large), class: "img-responsive" if @post.image? %>
         <div class="meta clearfix">
           <div class="author">
             <i class="fa fa-user"></i>

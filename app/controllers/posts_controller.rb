@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
-    @posts = Post.all.limit(4).order("created_at desc").paginate(page: params[:page], per_page: 4)
+    @posts = Post.all.limit(4).order('created_at desc').paginate(page: params[:page], per_page: 4)
   end
 
   def new
@@ -14,40 +14,38 @@ class PostsController < ApplicationController
     @post = Post.new post_params
 
     if @post.save
-      redirect_to @post, success: "Your article was successfully saved!"
+      redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :new, danger: "I was unable to save your post."
+      render :new, danger: 'I was unable to save your post.'
     end
   end
 
   def show
-    @posts = Post.all.limit(4).order("created_at desc")
+    @posts = Post.all.limit(4).order('created_at desc')
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update post_params
-      redirect_to @post, success: "Your article was successfully saved!"
+      redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :edit, danger: "I was unable to update your post."
+      render :edit, danger: 'I was unable to update your post.'
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_path, success: "Your article was successfully deleted!"
+    redirect_to posts_path, success: 'Your article was successfully deleted!'
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :slug)
+    params.require(:post).permit(:title, :content, :slug, :image)
   end
 
   def find_post
     @post = Post.friendly.find(params[:id])
   end
-
 end

@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def bootstrap_class_for(name)
     { success: 'alert-success',
       error:  'alert-danger',
@@ -9,11 +8,11 @@ module ApplicationHelper
   end
 
   def full_title(page_title = '')
-    base_title = "CodinGame Blog"
+    base_title = 'CodinGame Blog'
     if page_title.empty?
       base_title
     else
-      page_title + " | " + base_title
+      page_title + ' | ' + base_title
     end
   end
 

@@ -1,7 +1,7 @@
 <div class="col-md-6 col-sm-6">
   <article class=" blog-teaser">
     <header>
-      <%= image_tag("cat.png") %>
+      <%= image_tag post.image.url(:thumb) if post.image? %>
       <h3><a href="#"><%= link_to post.title, post_path(post) %></a></h3>
       <span class="meta"><%= post.created_at.strftime("%e %b %Y") %>, Aleksander Khorkov</span>
       <hr>
