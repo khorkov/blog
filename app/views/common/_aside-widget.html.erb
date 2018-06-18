@@ -29,14 +29,9 @@
     </header>
     <div class="body clearfix">
       <ul class="tags">
-        <li><a href="index.html#">OpenPGP</a></li>
-        <li><a href="index.html#">Django</a></li>
-        <li><a href="index.html#">Bitcoin</a></li>
-        <li><a href="index.html#">Security</a></li>
-        <li><a href="index.html#">GNU/Linux</a></li>
-        <li><a href="index.html#">Git</a></li>
-        <li><a href="index.html#">Homebrew</a></li>
-        <li><a href="index.html#">Debian</a></li>
+        <% tag_cloud(Tag.counts) do |tag| %>
+          <li><%= link_to tag.name, tag_path(tag.name) %></li>
+        <% end %>
       </ul>
     </div>
   </div>

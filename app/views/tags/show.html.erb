@@ -1,0 +1,13 @@
+<% provide(:title, "Tags") %>
+<div class="col-md-8 blog-main">
+  <div class="row hr">
+    <h1><%= @tag.name %></h1>
+    <hr>
+    <% if @tag.posts.empty?  %>
+      <h2>No articles</h2>
+    <% else %>
+      <%= render @tag.posts %>
+    <% end %>
+  </div>
+</div>
+<%= render 'common/aside-widget' %>

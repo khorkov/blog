@@ -9,7 +9,7 @@ ru:
         title: 'Title'
         image: 'Image'
         content: 'Content'
-        all_tags: 'Tag'
+        all_tags: 'Tags'
       category:
         name: 'Title'
         parent_id: 'Категория родитель'
