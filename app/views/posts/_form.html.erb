@@ -1,33 +1,24 @@
-<% if @post.errors.any? %>
-  <div class="alert alert-danger">
-    <h5><%= t('common.errors') %></h5>
-    <ul>
-      <% @post.errors.full_messages.each do |post| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'common/errors' %>
 
 <%= form_for @post, html: { multipart: true } do |f| %>
 
   <div class="form-group">
-    <%= f.label :title, "Title" %>
+    <%= f.label :title  %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :image, "Image" %>
+    <%= f.label :image %>
     <%= f.file_field :image, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :content, "Write your article here" %>
+    <%= f.label :content  %>
     <%= f.text_area :content, rows: 12, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.submit "#{ @post.new_record? ? 'Create' : 'Edit' }", class: 'btn btn-primary' %>
+    <%= f.submit t('.submit', action: @post.new_record? ? t('common.create') : t('common.edit')), class: 'btn btn-primary' %>
   </div>
 
   <br>

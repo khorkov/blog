@@ -1,0 +1,20 @@
+ru:
+  common:
+    errors: 'Ошибка'
+  activerecord:
+    models:
+      post: 'Статья'
+    attributes:
+      post:
+        title: 'Название'
+        image: 'Изображение'
+        content: 'Содержание'
+        all_tags: 'Тег'
+      category:
+        name: 'Название'
+        parent_id: 'Категория родитель'
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        too_short: ' слишком короткое'
+        too_long: 'слишком длинное'

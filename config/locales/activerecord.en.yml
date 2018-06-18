@@ -1,0 +1,20 @@
+ru:
+  common:
+    errors: 'Error'
+  activerecord:
+    models:
+      post: 'Article'
+    attributes:
+      post:
+        title: 'Title'
+        image: 'Image'
+        content: 'Content'
+        all_tags: 'Tag'
+      category:
+        name: 'Title'
+        parent_id: 'Категория родитель'
+    errors:
+      messages:
+        blank: 'can"t be empty'
+        too_short: 'too short'
+        too_long: 'It"s too long'
