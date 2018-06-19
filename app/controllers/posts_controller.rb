@@ -16,7 +16,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :new, danger: 'I was unable to save your post.'
+      flash.now[:danger] = 'I was unable to save your post.'
+      render :new
     end
   end
 
@@ -30,7 +31,8 @@ class PostsController < ApplicationController
     if @post.update post_params
       redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :edit, danger: 'I was unable to update your post.'
+      flash.now[:danger] = 'I was unable to update your post.'
+      render :edit
     end
   end
 
