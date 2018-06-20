@@ -13,12 +13,12 @@
   </div>
   <div class="aside-widget">
     <header>
-      <h3>Authors Favorites</h3>
+      <h3>Categories</h3>
     </header>
     <div class="body">
       <ul class="tales-list">
-        <% @posts.each do |post| %>
-          <li><a href="#"><%= link_to post.title, post %></a></li>
+        <% @categories.each do |category| %>
+          <li><a href="#"><%= link_to category.name, category %></a></li>
         <% end %>
       </ul>
     </div>

@@ -21,8 +21,10 @@
             <span class="data"><%= @post.created_at.strftime('%e %b %Y') %></span>
           </div>
           <div class="comments">
-            <i class="fa fa-comments"></i>
-            <span class="data"><a href="#">26 Comments</a></span>
+            <i class="fa fa-list-alt"></i>
+            <% if @post.category.present? %>
+              <span class="data"><a href="#"><%= link_to @post.category.name, @post.category %></a></span>
+            <% end %>
           </div>
         </div>
       </div>

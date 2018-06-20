@@ -6,8 +6,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { in: 3..50  }, uniqueness: true
   has_many :taggings, dependent: :destroy
 
-  has_many :taggings, dependent: :destroy
-  has_many :tags, through: :taggings
+  has_many   :taggings, dependent: :destroy
+  has_many   :tags, through: :taggings
+  belongs_to :category
 
   def all_tags
     self.tags.map(&:name).join(', ')

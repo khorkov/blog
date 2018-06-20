@@ -12,7 +12,6 @@ ru:
         all_tags: 'Tags'
       category:
         name: 'Title'
-        parent_id: 'Категория родитель'
     errors:
       messages:
         blank: 'can"t be empty'

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.limit(4).order('created_at desc').paginate(page: params[:page], per_page: 4)
+    @categories = Category.all
   end
 
   def new
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.all.limit(4).order('created_at desc')
+    @categories = Category.all
   end
 
   def edit; end
@@ -44,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :slug, :image, :all_tags)
+    params.require(:post).permit(:title, :content, :slug, :image, :all_tags, :category_id)
   end
 
   def find_post
