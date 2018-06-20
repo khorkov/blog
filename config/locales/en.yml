@@ -1,7 +1,6 @@
 ru:
   common:
     errors: 'When filling out the form, errors occurred'
-    back: 'Back'
     create: 'Create'
     edit: 'Edit'
   will_paginate:

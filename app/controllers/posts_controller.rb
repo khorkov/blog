@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.limit(4).order('created_at desc').paginate(page: params[:page], per_page: 4)
+    @categories = Category.all
   end
 
   def new
@@ -16,12 +17,14 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :new, danger: 'I was unable to save your post.'
+      flash.now[:danger] = 'I was unable to save your post.'
+      render :new
     end
   end
 
   def show
     @posts = Post.all.limit(4).order('created_at desc')
+    @categories = Category.all
   end
 
   def edit; end
@@ -30,7 +33,8 @@ class PostsController < ApplicationController
     if @post.update post_params
       redirect_to @post, success: 'Your article was successfully saved!'
     else
-      render :edit, danger: 'I was unable to update your post.'
+      flash.now[:danger] = 'I was unable to update your post.'
+      render :edit
     end
   end
 
@@ -42,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :slug, :image, :all_tags)
+    params.require(:post).permit(:title, :content, :slug, :image, :all_tags, :category_id)
   end
 
   def find_post

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :contacts, only: %i[new create]
   resources :tags, only: [:show]
+  resources :categories
   root 'welcome#index'
 
   get '*path' => redirect('/')

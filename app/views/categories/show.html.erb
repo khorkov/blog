@@ -1,0 +1,14 @@
+<% provide(:title, "Categories") %>
+<div class="col-md-8 blog-main">
+  <div class="row hr">
+    <h1><%= @category.name %></h1>
+    <hr>
+    <% if @category.posts.empty?  %>
+      <h2>No categories</h2>
+    <% else %>
+      <%= render @posts %>
+    <%= render 'common/paging' %>
+    <% end %>
+  </div>
+</div>
+<%= render 'common/aside-widget' %>
