@@ -18,7 +18,9 @@ gem 'pygments.rb', '~> 1.2', '>= 1.2.1'
 gem 'rails', '~> 5.1.5'
 gem 'redcarpet', '~> 3.4'
 gem 'sass-rails', '~> 5.0'
+gem 'slim'
 gem 'therubyracer'
+gem 'toastr-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
@@ -31,6 +33,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
