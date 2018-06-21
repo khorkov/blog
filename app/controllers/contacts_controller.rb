@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  add_breadcrumb 'Home', :root_path
+  add_breadcrumb 'Contact'
   def new
     @contact = Contact.new
   end

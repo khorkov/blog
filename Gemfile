@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'breadcrumbs_on_rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'

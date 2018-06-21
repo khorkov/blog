@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
 
+  add_breadcrumb 'Home', :root_path
+  add_breadcrumb 'Articles', :posts_path
+
   def index
     @posts = Post.all.limit(4).order('created_at desc').paginate(page: params[:page], per_page: 4)
     @categories = Category.all
@@ -23,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    add_breadcrumb @post.title
     @posts = Post.all.limit(4).order('created_at desc')
     @categories = Category.all
   end

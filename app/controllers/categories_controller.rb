@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :find_category, only: %i[show edit update destroy]
+  add_breadcrumb 'Home', :root_path
+  add_breadcrumb 'Categories', :categories_path
 
   def index
     @categories = Category.all
@@ -21,6 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    add_breadcrumb @category.name
     @categories = Category.all
     @posts = Post.where(category_id: [@category]).paginate(page: params[:page], per_page: 4)
   end
