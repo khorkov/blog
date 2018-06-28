@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   resources :categories
   root 'welcome#index'
 
+  get 'feeds', to: 'welcome#index', format: 'rss'
+  get 'sitemap' => 'welcome#sitemap'
+  get 'robots' => 'welcome#robots', format: :text
+
   get '*path' => redirect('/')
 end

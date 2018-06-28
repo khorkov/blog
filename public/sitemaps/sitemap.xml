@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://codingame.herokuapp.com/</loc>
+<lastmod>2018-06-28T13:20:41+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/cats-everywhere</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/big-thinkers</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/my-insightful-article</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/why-i-play-violin</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/cat-peeing-everywhere</loc>
+</url>
+<url>
+<loc>https://codingame.herokuapp.com/posts/big-thinker</loc>
+</url>
+</urlset>

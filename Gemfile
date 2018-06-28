@@ -8,6 +8,7 @@ end
 gem 'breadcrumbs_on_rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'dynamic_sitemaps', '~> 2.0'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
